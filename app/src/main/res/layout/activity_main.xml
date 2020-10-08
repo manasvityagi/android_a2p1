@@ -7,23 +7,25 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
         android:text="Weather Data"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
+        app:layout_constraintVertical_bias="0.078" />
 
     <TextView
-        android:id="@+id/ResultsView"
+        android:id="@+id/weather_result"
         android:layout_width="385dp"
-        android:layout_height="170dp"
+        android:layout_height="325dp"
         android:layout_marginTop="144dp"
         android:background="@drawable/border"
-        android:text="Results"
+        android:text="Weather Data"
         android:textSize="17.0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.384"
@@ -31,12 +33,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="484dp"
-        android:text="Button"
+        android:id="@+id/get_weather_data_btn"
+        android:layout_width="260dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="480dp"
+        android:background="@drawable/background_1"
+        android:text="Get Auckland Weather"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
