@@ -1,6 +1,7 @@
 package com.manas.a2_p1;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,16 +35,33 @@ public class MainActivity extends AppCompatActivity {
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
 
                 JsonObjectRequest jsonObjectRequest = new
-                        JsonObjectRequest(Request.Method.GET,url,
+                        JsonObjectRequest(Request.Method.GET, url,
                         new JSONObject(),
                         new com.android.volley.Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
                                 try {
                                     String server_data = response.toString();
-                                    JSONObject object = new JSONObject(server_data);
-                                    resultWeatherText.setText(object.getString("current"));
-                                    Log.e("data", response.toString());
+                                    JSONObject json_outer_obj = new JSONObject(server_data);
+//                                    JSONObject businessObject = offerObject.getJSONObject("business");
+//                                    String nameValue = businessObject.getString("name");
+//                                    System.out.println(nameValue);
+                                    JSONObject currentValue = json_outer_obj.getJSONObject("current");
+                                    JSONObject json_inner_current_obj = new JSONObject(currentValue.toString());
+                                    String currentTemp = json_inner_current_obj.getString("temp");
+                                    String currentPressure = json_inner_current_obj.getString("pressure");
+                                    String currentWindspeed = json_inner_current_obj.getString("wind_speed");
+                                    String humidity = json_inner_current_obj.getString("humidity");
+                                    Double tempInCelcius = Double.valueOf(currentTemp) -273.15;
+                                    //String currentTempValue = currentValue.getString("currentTempValue");
+                                    String result = "Temprature: "+ tempInCelcius + "\n"+
+                                     "Pressure: "+ currentPressure + "\n"+
+                                     "Humidity: "+ humidity + "\n"+
+                                     "Windspeed: "+ currentWindspeed ;
+
+
+                                    resultWeatherText.setText(result);
+                                    Log.e("data", currentTemp);
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
