@@ -49,12 +49,14 @@ public class MainActivity extends AppCompatActivity {
                                     String currentPressure = json_inner_current_obj.getString("pressure");
                                     String currentWindspeed = json_inner_current_obj.getString("wind_speed");
                                     String humidity = json_inner_current_obj.getString("humidity");
+                                    String windDirection = json_inner_current_obj.getString("wind_deg");
                                     Double tempInCelcius = Double.valueOf(currentTemp) -273.15;
-                                    //String currentTempValue = currentValue.getString("currentTempValue");
+
                                     String result = "Temprature: "+ tempInCelcius + "\n"+
                                      "Pressure: "+ currentPressure + "\n"+
                                      "Humidity: "+ humidity + "\n"+
-                                     "Windspeed: "+ currentWindspeed ;
+                                     "Wind Direction: "+ windDirection + "\n"+
+                                     "Wind Speed: "+ currentWindspeed ;
 
 
                                     resultWeatherText.setText(result);
