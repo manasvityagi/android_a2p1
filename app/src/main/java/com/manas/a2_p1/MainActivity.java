@@ -1,12 +1,12 @@
 package com.manas.a2_p1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -50,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
                                     String currentWindspeed = json_inner_current_obj.getString("wind_speed");
                                     String humidity = json_inner_current_obj.getString("humidity");
                                     String windDirection = json_inner_current_obj.getString("wind_deg");
-                                    Double tempInCelcius = Double.valueOf(currentTemp) -273.15;
+                                    Double tempInCelcius = Double.valueOf(currentTemp) - 273.15;
 
-                                    String result = "Temprature: "+ tempInCelcius + "\n"+
-                                     "Pressure: "+ currentPressure + "\n"+
-                                     "Humidity: "+ humidity + "\n"+
-                                     "Wind Direction: "+ windDirection + "\n"+
-                                     "Wind Speed: "+ currentWindspeed ;
+                                    String result = "Temperature: " + tempInCelcius + "\n" +
+                                            "Pressure: " + currentPressure + "\n" +
+                                            "Humidity: " + humidity + "\n" +
+                                            "Wind Direction: " + windDirection + "\n" +
+                                            "Wind Speed: " + currentWindspeed;
 
 
                                     resultWeatherText.setText(result);
