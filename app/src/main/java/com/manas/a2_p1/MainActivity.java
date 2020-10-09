@@ -43,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
                                 try {
                                     String server_data = response.toString();
                                     JSONObject json_outer_obj = new JSONObject(server_data);
-//                                    JSONObject businessObject = offerObject.getJSONObject("business");
-//                                    String nameValue = businessObject.getString("name");
-//                                    System.out.println(nameValue);
                                     JSONObject currentValue = json_outer_obj.getJSONObject("current");
                                     JSONObject json_inner_current_obj = new JSONObject(currentValue.toString());
                                     String currentTemp = json_inner_current_obj.getString("temp");
